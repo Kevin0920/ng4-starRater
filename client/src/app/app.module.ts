@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 import { HttpModule } from '@angular/http';
+import { MainService } from './main.service';
 import { RatingStarComponent } from './rating-star/rating-star.component';
 
 
@@ -20,7 +21,7 @@ import { RatingStarComponent } from './rating-star/rating-star.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

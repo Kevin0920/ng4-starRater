@@ -1,8 +1,8 @@
 .icon{
     display:inline-block;
-    margin-right:3px;
+    margin-right:5px;
     cursor:pointer;
     color:#ccc;
 }
-.icon:hover{color:#006dcc;}
-.filled {color:#006dcc;}
+.icon:hover{color:#cc5200;}
+.filled {color:#cc5200;}
