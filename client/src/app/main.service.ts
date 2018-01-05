@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http } from '@angular/http';
+import { FacebookLoginProvider } from "angular4-social-login";
 
 @Injectable()
 export class MainService {
   rate;
-
-  constructor(private _http: Http) { }
+  user
+  constructor(private _http: Http) {
+    if (localStorage.user !== undefined) {
+      this.user = JSON.parse(localStorage.user);
+      console.log(this.user);
+    }
+   }
 
   showRating(data, callback) {
     this._http.post('/rate', {data:data}).subscribe(
@@ -16,6 +22,12 @@ export class MainService {
       },
       (err) => { console.log(err); }
     )
+  }
+
+  singOut() {
+    localStorage.removeItem("user");
+    console.log(localStorage.user);
+    this.user = null;
   }
 
 }

@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron bg-transparent text-center">
+      <div class="card tex-center">
+        <h5 class="card-header">Social Login</h5>
+
+        <div class="card-block">
+          <button class="btn btn-social-icon btn-facebook" (click)="signInWithFB()">
+            <span class="fa fa-facebook"></span>
+          </button>
+        </div>
+        <hr>
+        <div *ngIf="user" class="card text-center">
+          <h3 class="card-header"> Your Social Login already</h3>
+        </div>
+        <!-- {{user.name}} -->
+
+        <img src="{{ user.photoUrl }}" class="card-img-top img-responsive photo">
+        
+        <div class="card-block">
+          <!-- <h3 class="card-title">{{ user.name }}</h3> -->
+          <!-- <p class="card-text">{{ user.email }}</p> -->
+        </div>
+        <button class="btn btn-danger" (click)="signOut()">Sign out</button> 
+      </div>
+    </div>
+
+
+  </div>
+
+
+</body>
+
+</html>
