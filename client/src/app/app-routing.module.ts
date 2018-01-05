@@ -4,6 +4,7 @@ import { RatingStarComponent } from './rating-star/rating-star.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path:'', component: RatingStarComponent },
   { path:'login', component: LoginComponent },
 
 ];

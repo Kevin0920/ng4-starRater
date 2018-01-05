@@ -23,15 +23,14 @@
         <div *ngIf="user" class="card text-center">
           <h3 class="card-header"> Your Social Login already</h3>
         </div>
-        <!-- {{user.name}} -->
 
-        <img src="{{ user.photoUrl }}" class="card-img-top img-responsive photo">
-        
-        <div class="card-block">
-          <!-- <h3 class="card-title">{{ user.name }}</h3> -->
-          <!-- <p class="card-text">{{ user.email }}</p> -->
+
+        <div *ngIf="user != null" class="card-block">
+          <img src="{{ user.photoUrl }}" class="card-img-top img-responsive photo">
+          <h3 class="card-title">{{ user.name }}</h3>
+          <p class="card-text">{{ user.email }}</p>
         </div>
-        <button class="btn btn-danger" (click)="signOut()">Sign out</button> 
+        <button class="btn btn-danger" (click)="signOut()">Sign out</button>
       </div>
     </div>
 

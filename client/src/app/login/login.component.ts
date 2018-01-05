@@ -12,13 +12,6 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-
-  // user = {
-  //   photoUrl: "",
-  //   name: "",
-  //   email: ""
-  // };
-
   private user: SocialUser;
   
   private loggedIn: boolean;
@@ -31,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this._router.navigate(['']);
   }
 
   signOut(): void {
@@ -42,13 +36,6 @@ export class LoginComponent implements OnInit {
       this.user = user;
       console.log(this.user);
       this.loggedIn = (user != null);
-      if (this.user != null) {
-        if(this.user != null){           
-          localStorage.removeItem('loggedOut');
-        //  this.MainService.signInWithFB(user);
-        // this._router.navigate(['']);
-      }
     });
   }
-
 }
